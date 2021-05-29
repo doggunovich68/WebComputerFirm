@@ -1,0 +1,49 @@
+﻿@page
+@model WebComputerFirm.Pages.Customers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Customer.CustomerId" class="control-label"></label>
+                <input asp-for="Customer.CustomerId" class="form-control" />
+                <span asp-validation-for="Customer.CustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.CustomerFullName" class="control-label"></label>
+                <input asp-for="Customer.CustomerFullName" class="form-control" />
+                <span asp-validation-for="Customer.CustomerFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.CustomerAddress" class="control-label"></label>
+                <input asp-for="Customer.CustomerAddress" class="form-control" />
+                <span asp-validation-for="Customer.CustomerAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.CustomerPhoneNumber" class="control-label"></label>
+                <input asp-for="Customer.CustomerPhoneNumber" class="form-control" />
+                <span asp-validation-for="Customer.CustomerPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,109 @@
+﻿@page
+@model WebComputerFirm.Pages.Order.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Orders</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.OrderExecutionDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.OrderExecutionDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.OrderExecutionMark)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.OrderExecutionMark)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.OrderMarkOfPayment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.OrderMarkOfPayment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.OrderPrepaidShare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.OrderPrepaidShare)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.OrderOrderDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.OrderOrderDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.OrderGeneralWarrantyDuration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.OrderGeneralWarrantyDuration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.TotalCost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.TotalCost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.ComponentId1Navigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.ComponentId1Navigation.ServiceDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.ComponentId2Navigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.ComponentId2Navigation.ServiceDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.ComponentId3Navigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.ComponentId3Navigation.ServiceDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.Customer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.Customer.CustomerAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.Employee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.Employee.EmployeeAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.ServiceId1Navigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.ServiceId1Navigation.ComponentCharacteristics)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.ServiceId2Navigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.ServiceId2Navigation.ComponentCharacteristics)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.ServiceId3Navigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.ServiceId3Navigation.ComponentCharacteristics)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Orders.OrderId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

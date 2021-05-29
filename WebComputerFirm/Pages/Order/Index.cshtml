@@ -1,0 +1,120 @@
+﻿@page
+@model WebComputerFirm.Pages.Order.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderExecutionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderExecutionMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderMarkOfPayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderPrepaidShare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderOrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderGeneralWarrantyDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].ComponentId1Navigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].ComponentId2Navigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].ComponentId3Navigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].ServiceId1Navigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].ServiceId2Navigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].ServiceId3Navigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Orders) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderExecutionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderExecutionMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderMarkOfPayment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderPrepaidShare)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderOrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderGeneralWarrantyDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentId1Navigation.ServiceDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentId2Navigation.ServiceDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentId3Navigation.ServiceDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.EmployeeAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceId1Navigation.ComponentCharacteristics)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceId2Navigation.ComponentCharacteristics)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceId3Navigation.ComponentCharacteristics)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.OrderId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.OrderId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.OrderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

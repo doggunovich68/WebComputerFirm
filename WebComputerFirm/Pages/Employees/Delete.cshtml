@@ -1,0 +1,64 @@
+﻿@page
+@model WebComputerFirm.Pages.Employees.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee.EmployeeFullName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Employee.EmployeeFullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee.EmployeeAge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Employee.EmployeeAge)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee.EmployeeGender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Employee.EmployeeGender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee.EmployeeAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Employee.EmployeeAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee.EmployeePhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Employee.EmployeePhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee.EmployeePassport)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Employee.EmployeePassport)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee.Position)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Employee.Position.JobTitle)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Employee.EmployeeId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

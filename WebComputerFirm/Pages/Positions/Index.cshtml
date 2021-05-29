@@ -1,0 +1,54 @@
+﻿@page
+@model WebComputerFirm.Pages.Positions.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Position[0].Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position[0].Responsibilities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position[0].Requirements)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position[0].JobTitle)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Position) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Responsibilities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Requirements)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PositionId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PositionId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PositionId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

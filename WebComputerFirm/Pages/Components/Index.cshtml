@@ -1,0 +1,84 @@
+﻿@page
+@model WebComputerFirm.Pages.Components.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentManufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentCountryManufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentDiscription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentCharacteristics)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentTermWarranty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].Type)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Component) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentManufacturer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentCountryManufacturer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentDiscription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentCharacteristics)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComponentTermWarranty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type.TypeDescription)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ComponentId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ComponentId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ComponentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
