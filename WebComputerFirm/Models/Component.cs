@@ -36,7 +36,7 @@ namespace WebComputerFirm.Models
         public long ComponentTermWarranty { get; set; }
         [Display(Name = "Код Вида")]
         public long TypeId { get; set; }
-
+        [Display(Name = "Вид Комплектующего")]
         public virtual TypesComponent Type { get; set; }
         public virtual ICollection<Orders> OrdersServiceId1Navigation { get; set; }
         public virtual ICollection<Orders> OrdersServiceId2Navigation { get; set; }
