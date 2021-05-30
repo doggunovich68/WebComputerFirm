@@ -42,14 +42,21 @@ namespace WebComputerFirm.Models
         public long ServiceId2 { get; set; }
         [Display(Name = "Код Услуги 3")]
         public long ServiceId3 { get; set; }
-
+        [Display(Name = "Код Комплектующего 1")]
         public virtual Services ComponentId1Navigation { get; set; }
+        [Display(Name = "Код Комплектующего 2")]
         public virtual Services ComponentId2Navigation { get; set; }
+        [Display(Name = "Код Комплектующего 3")]
         public virtual Services ComponentId3Navigation { get; set; }
+        [Display(Name = "Заказчик")]
         public virtual Customer Customer { get; set; }
+        [Display(Name = "Сотрудник")]
         public virtual Employee Employee { get; set; }
+        [Display(Name = "Код Услуги 1")]
         public virtual Component ServiceId1Navigation { get; set; }
+        [Display(Name = "Код Услуги 2")]
         public virtual Component ServiceId2Navigation { get; set; }
+        [Display(Name = "Код Услуги 3")]
         public virtual Component ServiceId3Navigation { get; set; }
     }
 }

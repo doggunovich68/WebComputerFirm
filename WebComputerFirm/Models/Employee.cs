@@ -30,6 +30,7 @@ namespace WebComputerFirm.Models
         public string EmployeePassport { get; set; }
         [Display(Name = "Код должности")]
         public long PositionId { get; set; }
+        [Display(Name = "Должность")]
         public virtual Position Position { get; set; }
         public virtual ICollection<Orders> Orders { get; set; }
     }
