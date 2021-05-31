@@ -2,3 +2,28 @@
 @model WebComputerFirm.Pages.FillReq.Request.PersonnelDepartmentModel
 @{
 }
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(ModelItem => Model.Employee[0].EmployeeFullName)</th>
+            <th scope="col">@Html.DisplayNameFor(ModelItem => Model.Position[0].JobTitle)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Employee)
+        {
+<tr>
+    <td>@Html.DisplayFor(ModelItem => item.EmployeeFullName)</td>
+    <td>
+        @{ try
+                            {
+            @Model.Position.First(p => p.PositionId == item.PositionId).JobTitle }
+                            catch
+                            {
+            <p>Запись отсутствует</p> } }
+    </td>
+</tr>}
+
+
+    </tbody>
+</table>

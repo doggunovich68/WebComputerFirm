@@ -2,3 +2,75 @@
 @model WebComputerFirm.Pages.FillReq.Filter.FilterOrdersModel
 @{
 }
+<table class="table table-hover">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderOrderDate)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderExecutionDate)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderPrepaidShare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderMarkOfPayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderExecutionMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderGeneralWarrantyDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].CustomerId)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Orders)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderOrderDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderExecutionDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderPrepaidShare)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderMarkOfPayment)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderExecutionMark)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderGeneralWarrantyDuration)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TotalCost)
+    </td>
+
+
+    <td>
+
+        @Model.Customer.CustomerFullName
+
+    </td>
+
+
+</tr>}
+    </tbody>
+</table>

@@ -2,3 +2,65 @@
 @model WebComputerFirm.Pages.FillReq.Filter.FilterComponentModel
 @{
 }
+<table class="table table-hover">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentTermWarranty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentDiscription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentCharacteristics)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].ComponentCountryManufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component[0].Type)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Component)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ComponentMark)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ComponentCost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ComponentDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ComponentTermWarranty)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ComponentDiscription)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ComponentCharacteristics)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ComponentCountryManufacturer)
+    </td>
+    <td>
+        @Model.TypesComponent.TypeTitle
+</tr>}
+    </tbody>
+</table>

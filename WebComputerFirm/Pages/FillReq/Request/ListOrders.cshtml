@@ -2,3 +2,160 @@
 @model WebComputerFirm.Pages.FillReq.Request.ListOrdersModel
 @{
 }
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(ModelItem => Model.Orders[0].ComponentId1)</th>
+
+            <th scope="col">@Html.DisplayNameFor(ModelItem => Model.Orders[0].CustomerId)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Orders)
+        {
+            <tr>
+                <td>@Html.DisplayFor(ModelItem => item.ComponentId1)</td>
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Component.First(p => p.ComponentId == item.ComponentId1).ComponentMark
+                        }
+                        catch
+                        {
+                            <p>Запись отсутствует</p>
+                        }
+                    }
+                </td>
+            </tr>
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.ComponentId2)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Component.First(p => p.ComponentId == item.ComponentId2).ComponentMark
+                    }
+                    catch
+                    {
+                        <p>Запись отсутствует</p>
+                    }
+                }
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.ComponentId3)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Component.First(p => p.ComponentId == item.ComponentId3).ComponentMark
+                    }
+                    catch
+                    {
+                        <p>Запись отсутствует</p>
+                    }
+                }
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.ServiceId1)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Services.First(p => p.ServiceId == item.ServiceId1).ServiceTitle
+                    }
+                    catch
+                    {
+                        <p>Запись отсутствует</p>
+                    }
+                }
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.ServiceId2)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Services.First(p => p.ServiceId == item.ServiceId2).ServiceTitle
+                    }
+                    catch
+                    {
+                        <p>Запись отсутствует</p>
+                    }
+                }
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.ServiceId3)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Services.First(p => p.ServiceId == item.ServiceId3).ServiceTitle
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.EmployeeId)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Employee.First(p => p.EmployeeId == item.EmployeeId).EmployeeFullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.CustomerId)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Customer.First(p => p.CustomerId == item.CustomerId).CustomerFullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+
+    }
+       
+
+
+        </tbody>
+    </table>

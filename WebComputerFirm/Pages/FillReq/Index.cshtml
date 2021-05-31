@@ -1,4 +1,89 @@
 ﻿@page
 @model WebComputerFirm.Pages.FillReq.IndexModel
 @{
+    ViewData["Title"] = "Список запросов и фильтров";
 }
+<script>function BtnFun(ClassName, obj) {
+        var value = obj.value;
+        var name = "." + ClassName;
+        if (value[0] != "-") {
+            $(name).prop('disabled', false);
+        }
+        else {
+            $(name).prop('disabled', true);
+        }
+    }</script>
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Запросы
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/PersonnelDepartment">Отдел кадров</a><br />
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/ListOrders">Список заказов</a><br />
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/ListComponent">Список комплектующих</a><br />
+
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Фильтры
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <form method="get">
+                <div class="card-body">
+                    Фильтровать сотрудников по должности:
+                    <select asp-items="Model.SelPosition" name="id" class="form-control-sm" onclick="BtnFun('FilPos', this)">
+                        <option value="-1">Не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterPosition" class="btn btn-primary FilPos" disabled>Отфильтровать</button>
+                </div>
+            </form>
+            <form method="get">
+                <div class="card-body">
+                    Фильтровать комплектующие по видам:
+                    <select asp-items="Model.SelComp" name="id" class="form-control-sm" onclick="BtnFun('FilComp', this)">
+                        <option value="-1">Не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterComponent" class="btn btn-primary FilComp" disabled>Отфильтровать</button>
+                </div>
+
+            </form>
+
+            <form method="get">
+                <div class="card-body">
+                    Фильтровать заказы по заказчикам:
+                    <select asp-items="Model.SelOrd" name="id" class="form-control-sm" onclick="BtnFun('FilOrd', this)">
+                        <option value="-1">Не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterOrders" class="btn btn-primary FilOrd" disabled>Отфильтровать</button>
+                </div>
+
+            </form>
+            <form method="get">
+                <div class="card-body">
+
+                    Фильтровать заказы по датам заказа:
+                    <select asp-items="Model.OrderData" name="id" class="form-control-sm" onclick="BtnFun('FilOrddata', this)">
+                        <option value="-1">Дата не выбрана</option>
+                    </select>
+                    <button asp-page="Filter/FilterOrdersdate" class="btn btn-primary FilOrddata" disabled>Отфильтровать</button>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
